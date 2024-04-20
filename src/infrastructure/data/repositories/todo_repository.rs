@@ -1,7 +1,7 @@
 use surrealdb::err::Error::Thrown;
 use surrealdb::Error;
 
-use crate::domain::models::todo::Todo;
+use crate::domain::models::todo::{NewTodo, Todo};
 use crate::infrastructure::data::db_context::surreal_context::DB;
 
 
@@ -50,7 +50,7 @@ impl TodoRepository {
         Err(error)
     }
 
-    pub async fn create_todo(&self, content: Todo) -> Result<Vec<Todo>, Error> {
+    pub async fn create_todo(&self, content: NewTodo) -> Result<Vec<Todo>, Error> {
         let record = DB.create(&self.table).content(content).await?;
         Ok(record)
     }

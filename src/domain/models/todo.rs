@@ -11,3 +11,9 @@ pub struct Todo {
     pub created_at: Option<DateTime<Local>>,
     pub updated_at: Option<DateTime<Local>>,
 }
+
+#[derive(Deserialize, Serialize, Clone)]
+pub struct NewTodo {
+    pub title: String,
+    pub content: String,
+}

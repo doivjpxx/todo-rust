@@ -2,7 +2,7 @@ use axum::http::{
     header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE},
     HeaderValue, Method,
 };
-use todo::{api::router::create_router, data::db_context::surreal_context::connect_db};
+use todo::{api::router::create_router, infrastructure::data::db_context::surreal_context::connect_db};
 use tower_http::cors::CorsLayer;
 
 #[tokio::main]
